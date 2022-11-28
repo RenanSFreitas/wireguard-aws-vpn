@@ -46,7 +46,7 @@ do
     sleep 5
 done
 
-./vpn.sh $AWS_IDENTITY_FILE $PUBLIC_IP_ADDRESS
+./vpn.sh $AWS_IDENTITY_FILE $PUBLIC_IP_ADDRESS --skip-packages-install
 
 function tear_down {
     printf "\n\nVPN will be shutdown\n\n"
