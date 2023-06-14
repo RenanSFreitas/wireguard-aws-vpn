@@ -52,8 +52,8 @@ function tear_down {
     printf "\n\nVPN will be shutdown\n\n"
     TERMINATE_INSTANCE_RESPONSE=$(aws --profile $AWS_PROFILE --region $AWS_REGION ec2 terminate-instances --instance-ids $INSTANCE_ID)
     printf "Terminate instances call response was:\n$TERMINATE_INSTANCE_RESPONSE\n\n"
-    wg-quick down wg0
     ssh-keygen -R $PUBLIC_IP_ADDRESS
+    wg-quick down wg0
 }
 
 trap tear_down EXIT

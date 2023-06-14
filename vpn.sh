@@ -39,7 +39,7 @@ scp -i "$IDENTITY_FILE" vpn-server.sh "ubuntu@$INSTANCE_IP:"
 ssh -i "$IDENTITY_FILE" "ubuntu@$INSTANCE_IP" bash vpn-server.sh
 
 echo "Configure client"
-ssh -i "$IDENTITY_FILE" "ubuntu@$INSTANCE_IP" cat client.conf | sudo tee /etc/wireguard/wg0.conf
+ssh -i "$IDENTITY_FILE" "ubuntu@$INSTANCE_IP" cat client.conf | sudo tee /opt/homebrew/etc/wireguard/wg0.conf
 wg-quick up wg0
 
 echo "Run tests"
