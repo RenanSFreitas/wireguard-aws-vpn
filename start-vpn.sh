@@ -36,8 +36,8 @@ do
     INSTANCE_STATE=$(echo $DESCRIBE_INSTANCE_RESPONSE | jq '.Reservations[0].Instances[0].State.Name' --raw-output)
     if [[ "$INSTANCE_STATE" == "running" ]]; then
         echo -e "Instance state is \033[0;32m$INSTANCE_STATE\033[0m"
-        echo "Will wait 15 seconds before attempting to SSH to it"
-        sleep 15
+        echo "Will wait 30 seconds before attempting to SSH to it"
+        sleep 30
         break
     else 
         echo -e "Instance state is \033[0;33m$INSTANCE_STATE\033[0m"
